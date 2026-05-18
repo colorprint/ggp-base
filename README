@@ -48,7 +48,7 @@ RandomGamer always chooses a random legal move.
 
                              === BUILD NOTES ===
 
-    The project must be built with Java 7 or later.
+    The project must be built with Java 17 or later.
 
     The project contains Eclipse project files that allow it to be imported
 directly into Eclipse as an "Existing Project" or "Project from Git". This is
