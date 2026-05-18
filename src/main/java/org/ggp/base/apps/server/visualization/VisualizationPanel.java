@@ -115,9 +115,9 @@ public final class VisualizationPanel extends JPanel implements Observer
                     boolean atEnd = (tabs.getSelectedIndex() == tabs.getTabCount()-1);
                     try {
                         for(int i = tabs.getTabCount(); i < stepNum; i++)
-                            tabs.add(new Integer(i+1).toString(), new JPanel());
+                            tabs.add(Integer.toString(i+1), new JPanel());
                         tabs.setComponentAt(stepNum-1, newPanel);
-                        tabs.setTitleAt(stepNum-1, new Integer(stepNum).toString());
+                        tabs.setTitleAt(stepNum-1, Integer.toString(stepNum));
 
                         if(atEnd) {
                             tabs.setSelectedIndex(tabs.getTabCount()-1);

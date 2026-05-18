@@ -114,7 +114,7 @@ public final class Kiosk extends JPanel implements ActionListener, ItemListener,
         Set<Class<? extends GameCanvas>> theAvailableCanvasList = ProjectSearcher.GAME_CANVASES.getConcreteClasses();
         for(Class<? extends GameCanvas> availableCanvas : theAvailableCanvasList) {
             try {
-                GameCanvas theCanvas = availableCanvas.newInstance();
+                GameCanvas theCanvas = availableCanvas.getDeclaredConstructor().newInstance();
                 theAvailableGames.add(new AvailableGame(theCanvas.getGameName(), theCanvas.getGameKey(), availableCanvas));
             } catch(Exception e) {
                 ;
@@ -137,7 +137,7 @@ public final class Kiosk extends JPanel implements ActionListener, ItemListener,
         for(Class<?> gamer : gamersCopy)
         {
             try {
-                Gamer g = (Gamer) gamer.newInstance();
+                Gamer g = (Gamer) gamer.getDeclaredConstructor().newInstance();
                 if (!g.isComputerPlayer()) {
                     throw new Exception("Kiosk only considers computer players");
                 }
@@ -219,10 +219,8 @@ public final class Kiosk extends JPanel implements ActionListener, ItemListener,
 
         public GameCanvas getCanvas() {
             try {
-                return (GameCanvas)theCanvasClass.newInstance();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
+                return (GameCanvas)theCanvasClass.getDeclaredConstructor().newInstance();
+            } catch (ReflectiveOperationException e) {
                 e.printStackTrace();
             }
             return null;
@@ -329,7 +327,7 @@ public final class Kiosk extends JPanel implements ActionListener, ItemListener,
                     if(!playerComboBox.getSelectedItem().equals(remotePlayerString)) {
                         Class<?> gamerClass = gamers.get(playerComboBox.getSelectedIndex());
                         try {
-                            gamer = (Gamer) gamerClass.newInstance();
+                            gamer = (Gamer) gamerClass.getDeclaredConstructor().newInstance();
                         } catch(Exception ex) { throw new RuntimeException(ex); }
                         theComputerPlayer = new GamePlayer(DEFAULT_COMPUTER_PORT, gamer);
                         theComputerPlayer.start();

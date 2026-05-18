@@ -25,7 +25,7 @@ public class MatchPublisher {
         String message = URLEncoder.encode(theData, "UTF-8");
 
         try {
-            URL url = new URL(theURL);
+            URL url = java.net.URI.create(theURL).toURL();
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setDoOutput(true);
             connection.setRequestMethod("POST");

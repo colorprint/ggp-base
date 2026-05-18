@@ -16,7 +16,7 @@ import org.ggp.base.util.reflection.ProjectSearcher;
  */
 public final class PlayerRunner
 {
-    public static void main(String[] args) throws IOException, InstantiationException, IllegalAccessException
+    public static void main(String[] args) throws IOException, ReflectiveOperationException
     {
         if (args.length != 2 || args[0].equals("${arg0}")) {
             System.out.println("PlayerRunner [port] [name]");
@@ -38,7 +38,7 @@ public final class PlayerRunner
             System.out.println("Could not find player class with that name. Available choices are: " + Arrays.toString(availableGamers.toArray()));
             return;
         }
-        Gamer gamer = (Gamer) chosenGamerClass.newInstance();
+        Gamer gamer = (Gamer) chosenGamerClass.getDeclaredConstructor().newInstance();
         new GamePlayer(port, gamer).start();
     }
 }

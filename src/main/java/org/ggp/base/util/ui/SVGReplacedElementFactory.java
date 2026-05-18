@@ -79,10 +79,10 @@ public class SVGReplacedElementFactory implements ReplacedElementFactory {
                 SVGConstants.SVG_NAMESPACE_URI);
         transcoderHints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT, "svg");
         transcoderHints.put(ImageTranscoder.KEY_USER_STYLESHEET_URI, cssFile.toURI().toString());
-        transcoderHints.put(ImageTranscoder.KEY_WIDTH, new Float(2 * width));
-        transcoderHints.put(ImageTranscoder.KEY_HEIGHT, new Float(2 * width));
-        transcoderHints.put(ImageTranscoder.KEY_MAX_HEIGHT, new Float(2 * width));
-        transcoderHints.put(ImageTranscoder.KEY_MAX_WIDTH, new Float(2 * width));
+        transcoderHints.put(ImageTranscoder.KEY_WIDTH, Float.valueOf(2 * width));
+        transcoderHints.put(ImageTranscoder.KEY_HEIGHT, Float.valueOf(2 * width));
+        transcoderHints.put(ImageTranscoder.KEY_MAX_HEIGHT, Float.valueOf(2 * width));
+        transcoderHints.put(ImageTranscoder.KEY_MAX_WIDTH, Float.valueOf(2 * width));
 
         try {
 

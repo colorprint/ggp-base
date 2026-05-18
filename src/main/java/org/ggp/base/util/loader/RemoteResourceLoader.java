@@ -47,7 +47,7 @@ public class RemoteResourceLoader {
         while(true) {
             nAttempt++;
             try {
-                URL url = new URL(theURL);
+                URL url = java.net.URI.create(theURL).toURL();
                 URLConnection urlConnection = url.openConnection();
                 urlConnection.setUseCaches(false);
                 urlConnection.setDefaultUseCaches(false);
@@ -78,7 +78,7 @@ public class RemoteResourceLoader {
     }
 
     public static String postRawWithTimeout(String theURL, String toPost, int nTimeout) throws IOException {
-        URL url = new URL(theURL);
+        URL url = java.net.URI.create(theURL).toURL();
         URLConnection urlConnection = url.openConnection();
         urlConnection.setDoOutput(true);
         urlConnection.setConnectTimeout(nTimeout);

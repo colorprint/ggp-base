@@ -98,7 +98,7 @@ public final class Player extends JPanel
         {
             Gamer g;
             try {
-                g = gamer.newInstance();
+                g = gamer.getDeclaredConstructor().newInstance();
                 typeComboBox.addItem(g.getName());
             } catch(Exception ex) {
                 gamers.remove(gamer);
@@ -145,7 +145,7 @@ public final class Player extends JPanel
 
                     Class<?> gamerClass = gamers.get(typeComboBox.getSelectedIndex());
                     try {
-                        gamer = (Gamer) gamerClass.newInstance();
+                        gamer = (Gamer) gamerClass.getDeclaredConstructor().newInstance();
                     } catch(Exception ex) { throw new RuntimeException(ex); }
                     detailPanel = gamer.getDetailPanel();
                     configPanel = gamer.getConfigPanel();
