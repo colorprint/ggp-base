@@ -77,8 +77,6 @@ public class FailsafeStateMachine extends StateMachine
             GamerLogger.log("StateMachine", "Failsafe Machine: successfully activated initial state machine for use!");
             return true;
         } catch(Exception e1) {
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(Error e2) {
         }
         return false;
@@ -92,8 +90,6 @@ public class FailsafeStateMachine extends StateMachine
             GamerLogger.log("StateMachine", "Failsafe Machine: successfully loaded traditional prover.");
             return true;
         } catch(Exception e1) {
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e2) {
@@ -112,8 +108,6 @@ public class FailsafeStateMachine extends StateMachine
             throw ge;
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -132,8 +126,6 @@ public class FailsafeStateMachine extends StateMachine
             return theBackingMachine.getInitialState();
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -156,8 +148,6 @@ public class FailsafeStateMachine extends StateMachine
             failGracefully(e, null);
         } catch(OutOfMemoryError e) {
             throw e;
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(Error e) {
             failGracefully(null, e);
         }
@@ -178,8 +168,6 @@ public class FailsafeStateMachine extends StateMachine
             failGracefully(e, null);
         } catch(OutOfMemoryError e) {
             throw e;
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(Error e) {
             failGracefully(null, e);
         }
@@ -196,8 +184,6 @@ public class FailsafeStateMachine extends StateMachine
             return theBackingMachine.getMachineStateFromSentenceList(sentenceList);
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -216,8 +202,6 @@ public class FailsafeStateMachine extends StateMachine
             return theBackingMachine.getMoveFromTerm(term);
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -238,8 +222,6 @@ public class FailsafeStateMachine extends StateMachine
             throw te;
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -260,8 +242,6 @@ public class FailsafeStateMachine extends StateMachine
             throw te;
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -280,8 +260,6 @@ public class FailsafeStateMachine extends StateMachine
             return theBackingMachine.getRoleFromConstant(constant);
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -300,8 +278,6 @@ public class FailsafeStateMachine extends StateMachine
             return theBackingMachine.getRoles();
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -320,8 +296,6 @@ public class FailsafeStateMachine extends StateMachine
             return theBackingMachine.isTerminal(state);
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -344,8 +318,6 @@ public class FailsafeStateMachine extends StateMachine
             throw me;
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -371,8 +343,6 @@ public class FailsafeStateMachine extends StateMachine
             throw ge;
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
@@ -392,8 +362,6 @@ public class FailsafeStateMachine extends StateMachine
             return;
         } catch(Exception e) {
             failGracefully(e, null);
-        } catch(ThreadDeath d) {
-            throw d;
         } catch(OutOfMemoryError e) {
             throw e;
         } catch(Error e) {
