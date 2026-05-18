@@ -9,8 +9,8 @@
     <property name="ECLIPSE_HOME" value="/usr/lib/eclipse"/>
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="17"/>
-    <property name="source" value="17"/>
+    <property name="target" value="25"/>
+    <property name="source" value="25"/>
     <path id="GGP_Base.classpath">
 		<pathelement location="bin"/>
 		<pathelement location="lib/FlyingSaucer/core-renderer.jar"/>

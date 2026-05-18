@@ -1,1 +1,7 @@
+plugins {
+    // Lets Gradle auto-provision a JDK 25 toolchain by downloading it from a
+    // public vendor (Adoptium etc.) when no matching local JDK is found.
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.10.0'
+}
+
 rootProject.name = 'ggp-base'

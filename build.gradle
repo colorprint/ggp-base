@@ -5,14 +5,17 @@ plugins {
     id 'idea'
 }
 
-// Target Java 17 bytecode. The host JDK must be Java 17 or newer.
+// Target Java 25 bytecode. A JDK 25 toolchain is auto-provisioned by Gradle
+// (via the foojay-resolver convention plugin configured in settings.gradle)
+// if one is not already installed locally.
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
-    options.release = 17
+    options.release = 25
 }
 
 repositories {
